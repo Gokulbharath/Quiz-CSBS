@@ -15,88 +15,88 @@ export default function Contact() {
   };
 
   return (
-    <main style={{background: 'linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%)', minHeight: '100vh', padding: 0, margin: 0}}>
-      {/* Hero Section */}
+      <main style={{ minHeight: '100vh', background: '#18111b', padding: 0, margin: 0, fontFamily: 'Poppins, Inter, Arial, sans-serif' }}>
+        {/* Gap with #18111A background color */}
+        <div style={{ height: '40px', background: '#18111A' }} />
+      {/* Hero Section - Glassy Card */}
       <section style={{
-        marginTop: '1cm',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        padding: '32px 0 24px 0',
-        background: 'linear-gradient(120deg, #fbc2eb 0%, #a18cd1 100%)',
+        margin: '0 auto',
+        maxWidth: 900,
+        borderRadius: 18,
+        background: 'radial-gradient(ellipse at 60% 40%, #e6e6b6 0%, #18111b 100%)',
+        boxShadow: '0 8px 40px #000a',
+        padding: '48px 32px 32px 32px',
+        textAlign: 'center',
         color: '#fff',
-        borderRadius: 60,
-        boxShadow: '0 4px 32px rgba(161,140,209,0.18)',
         position: 'relative',
         overflow: 'hidden',
-        minHeight: 260,
-        maxWidth: 1100,
-        marginLeft: 'auto',
-        marginRight: 'auto',
-        textAlign: 'center'
+        marginBottom: 48
       }}>
-        <h1 style={{fontWeight:900, fontSize:40, marginBottom:12, color:'#f67280', letterSpacing:'-1px', textShadow:'0 2px 8px #a18cd155'}}>Contact <span style={{color:'#a259c6'}}>QuizTime</span></h1>
-        <p style={{fontSize:20, color:'#fff', marginBottom:18, fontWeight:500, textShadow:'0 1px 4px #a18cd155', maxWidth:700, margin:'0 auto'}}>We'd love to hear from you! Reach out with questions, feedback, or partnership ideas. Our team will get back to you as soon as possible.</p>
+        <h1 style={{ fontWeight: 900, fontSize: 40, marginBottom: 12, color: '#fff', letterSpacing: '-1px', textShadow: '0 2px 8px #0008' }}>Contact QuizUp</h1>
+        <div style={{ fontSize: 18, color: '#fff', opacity: 0.92, marginBottom: 24, maxWidth: 700, margin: '0 auto' }}>
+          We'd love to hear from you! Reach out with questions, feedback, or partnership ideas. Our team will get back to you as soon as possible.
+        </div>
       </section>
 
-      {/* Contact Form Section */}
-      <section style={{margin:'48px auto 0 auto',maxWidth:900,background:'#fff',borderRadius:32,boxShadow:'0 4px 24px #fbc2eb33',padding:'32px 28px',textAlign:'center'}}>
-        <h2 style={{color:'#a259c6',fontWeight:800,fontSize:28,marginBottom:10}}>Send Us a Message</h2>
-        {submitted ? (
-          <div className="contact-success card-pop">
-            <h3>Thank you!</h3>
-            <p>Your message has been received. We'll get back to you soon.</p>
+      {/* Contact Form Section - Glassy Card */}
+      <section style={{ maxWidth: 900, margin: '0 auto', marginBottom: 32 }}>
+        <div style={{ background: 'rgba(255,255,255,0.03)', borderRadius: 10, boxShadow: '0 2px 8px #0002', padding: '32px 28px', textAlign: 'center' }}>
+          <h2 style={{ color: '#fff', fontWeight: 800, fontSize: 24, marginBottom: 18 }}>Send Us a Message</h2>
+          {submitted ? (
+            <div className="contact-success card-pop">
+              <h3 style={{ color: '#00BFA6' }}>Thank you!</h3>
+              <p style={{ color: '#fff' }}>Your message has been received. We'll get back to you soon.</p>
+            </div>
+          ) : (
+            <form style={{ display: 'flex', flexDirection: 'column', gap: 18, maxWidth: 500, margin: '0 auto' }} onSubmit={handleSubmit} autoComplete="off">
+              <input
+                type="text"
+                placeholder="Your Name"
+                name="name"
+                value={form.name}
+                onChange={handleChange}
+                required
+                style={{ padding: 14, borderRadius: 12, border: '1px solid #2a1a2e', fontSize: 16, outline: 'none', background: '#22223b', color: '#fff', boxShadow: '0 1px 4px #0002' }}
+              />
+              <input
+                type="email"
+                placeholder="Your Email"
+                name="email"
+                value={form.email}
+                onChange={handleChange}
+                required
+                style={{ padding: 14, borderRadius: 12, border: '1px solid #2a1a2e', fontSize: 16, outline: 'none', background: '#22223b', color: '#fff', boxShadow: '0 1px 4px #0002' }}
+              />
+              <textarea
+                placeholder="Your Message"
+                name="message"
+                value={form.message}
+                onChange={handleChange}
+                required
+                rows={5}
+                style={{ padding: 14, borderRadius: 12, border: '1px solid #2a1a2e', fontSize: 16, outline: 'none', background: '#22223b', color: '#fff', boxShadow: '0 1px 4px #0002', resize: 'vertical' }}
+              />
+              <button
+                type="submit"
+                style={{ background: 'linear-gradient(90deg,#ff4ecd,#a259c6)', color: '#fff', fontWeight: 700, fontSize: 18, padding: '12px 0', border: 'none', borderRadius: 12, boxShadow: '0 2px 8px #a259c633', cursor: 'pointer', transition: 'background 0.2s' }}
+              >
+                Send Message
+              </button>
+            </form>
+          )}
+          <div style={{ marginTop: 28, fontSize: 16, color: '#bdbdbd' }}>
+            Or email us at <a href="mailto:support@quizup.com" style={{ color: '#ff4ecd', textDecoration: 'underline' }}>support@quizup.com</a>
           </div>
-        ) : (
-          <form style={{display:'flex',flexDirection:'column',gap:18,maxWidth:500,margin:'0 auto'}} onSubmit={handleSubmit} autoComplete="off">
-            <input
-              type="text"
-              placeholder="Your Name"
-              name="name"
-              value={form.name}
-              onChange={handleChange}
-              required
-              style={{padding:14,borderRadius:12,border:'1px solid #e0e7ff',fontSize:16,outline:'none',boxShadow:'0 1px 4px #a18cd111'}}
-            />
-            <input
-              type="email"
-              placeholder="Your Email"
-              name="email"
-              value={form.email}
-              onChange={handleChange}
-              required
-              style={{padding:14,borderRadius:12,border:'1px solid #e0e7ff',fontSize:16,outline:'none',boxShadow:'0 1px 4px #a18cd111'}}
-            />
-            <textarea
-              placeholder="Your Message"
-              name="message"
-              value={form.message}
-              onChange={handleChange}
-              required
-              rows={5}
-              style={{padding:14,borderRadius:12,border:'1px solid #e0e7ff',fontSize:16,outline:'none',boxShadow:'0 1px 4px #a18cd111',resize:'vertical'}}
-            />
-            <button
-              type="submit"
-              style={{background:'linear-gradient(90deg,#a18cd1,#fbc2eb)',color:'#fff',fontWeight:700,fontSize:18,padding:'12px 0',border:'none',borderRadius:12,boxShadow:'0 2px 8px #a18cd133',cursor:'pointer',transition:'background 0.2s'}}
-            >
-              Send Message
-            </button>
-          </form>
-        )}
-        <div style={{marginTop:28,fontSize:16,color:'#888'}}>
-          Or email us at <a href="mailto:support@quiztime.com" style={{color:'#a259c6',textDecoration:'underline'}}>support@quiztime.com</a>
         </div>
       </section>
 
       {/* Social Section */}
-      <section style={{textAlign:'center',marginTop:40}}>
-        <h2 style={{fontWeight:900,fontSize:28,color:'#f67280',marginBottom:8}}>Connect with Us</h2>
-        <div style={{display:'flex',justifyContent:'center',gap:32,marginTop:12}}>
-          <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" style={{color:'#a259c6',fontSize:24,textDecoration:'none'}}>🐦 Twitter</a>
-          <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" style={{color:'#f67280',fontSize:24,textDecoration:'none'}}>📸 Instagram</a>
-          <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" style={{color:'#a18cd1',fontSize:24,textDecoration:'none'}}>📘 Facebook</a>
+      <section style={{ textAlign: 'center', marginTop: 40 }}>
+        <h2 style={{ fontWeight: 900, fontSize: 24, color: '#fff', marginBottom: 8 }}>Connect with Us</h2>
+        <div style={{ display: 'flex', justifyContent: 'center', gap: 32, marginTop: 12 }}>
+          <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#a259c6', fontSize: 22, textDecoration: 'none' }}>🐦 Twitter</a>
+          <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#ff4ecd', fontSize: 22, textDecoration: 'none' }}>📸 Instagram</a>
+          <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#FFD600', fontSize: 22, textDecoration: 'none' }}>📘 Facebook</a>
         </div>
       </section>
     </main>

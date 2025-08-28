@@ -1,3 +1,162 @@
+/* Comprehensive responsive improvements for all layouts */
+@media (max-width: 900px) {
+  .container {
+    max-width: 100vw;
+    padding: 10px 2vw;
+  }
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 0;
+    gap: 8px;
+  }
+  .logo, .logo a {
+    font-size: 18px !important;
+    margin-bottom: 6px;
+  }
+  .nav {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .nav a {
+    font-size: 15px !important;
+    margin-left: 0 !important;
+    margin-right: 10px !important;
+    padding: 4px 0;
+  }
+  .site-header {
+    padding: 0 2vw;
+  }
+  .hero, .landing-modern {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin-top: 10px !important;
+    padding: 0 2vw 18px 2vw !important;
+    border-radius: 16px !important;
+    box-shadow: 0 4px 16px rgba(11,60,137,0.10) !important;
+    width: 100vw !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+  .illustration-card {
+    height: 160px;
+    padding: 8px;
+  }
+  .illustration-card img, .hero img, .landing-modern img {
+    max-width: 90vw !important;
+    max-height: 120px !important;
+    display: block;
+    margin: 0 auto 10px auto;
+  }
+  .modern-title, .hero-right h1, .landing-modern h1 {
+    font-size: 20px !important;
+    text-align: center !important;
+  }
+  .modern-lead, .lead, .landing-modern p {
+    font-size: 13px !important;
+    text-align: center !important;
+  }
+  .btn, .modern-btn {
+    width: 100%;
+    font-size: 15px;
+    margin: 0 auto 8px auto;
+    display: block;
+  }
+  .login-card, .feature-card, .stat-card, .modern-feature-card, .modern-stat-card {
+    padding: 12px 4px;
+    border-radius: 12px;
+    max-width: 98vw;
+    margin: 0 auto 12px auto;
+  }
+  .feature-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .stats {
+    flex-direction: column;
+    gap: 8px;
+  }
+  input, textarea, select {
+    font-size: 14px;
+    padding: 10px 8px;
+  }
+  .avatar img {
+    width: 28px;
+    height: 28px;
+    margin-left: 6px;
+  }
+  .footer, .site-footer {
+    font-size: 12px;
+    padding: 8px 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .container {
+    padding: 2px 1vw;
+  }
+  .header-inner {
+    padding: 4px 0;
+    gap: 4px;
+  }
+  .logo, .logo a {
+    font-size: 15px !important;
+  }
+  .nav a {
+    font-size: 12px !important;
+    margin-right: 6px !important;
+  }
+  .login-card, .feature-card, .stat-card, .modern-feature-card, .modern-stat-card {
+    padding: 6px 1px;
+    border-radius: 8px;
+    max-width: 100vw;
+  }
+  .modern-title, .hero-right h1, .landing-modern h1 {
+    font-size: 15px !important;
+  }
+  .modern-lead, .lead, .landing-modern p {
+    font-size: 11px !important;
+  }
+  .avatar img {
+    width: 22px;
+    height: 22px;
+    margin-left: 2px;
+  }
+}
+/* Extra mobile-specific fixes for hero/card */
+@media (max-width: 600px) {
+  .hero, .landing-modern {
+    margin-top: 12px !important;
+    padding: 0 2vw 18px 2vw !important;
+    border-radius: 18px !important;
+    box-shadow: 0 4px 16px rgba(11,60,137,0.10) !important;
+  }
+  .hero img, .landing-modern img, .illustration-card img {
+    max-width: 90vw !important;
+    max-height: 160px !important;
+    display: block;
+    margin: 0 auto 12px auto;
+  }
+  .landing-modern, .hero {
+    width: 100vw !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+  .landing-modern h1, .hero-right h1, .modern-title {
+    font-size: 22px !important;
+    text-align: center !important;
+  }
+  .landing-modern p, .modern-lead, .lead {
+    font-size: 14px !important;
+    text-align: center !important;
+  }
+  .landing-modern .btn, .hero .btn, .modern-btn {
+    width: 100%;
+    font-size: 16px;
+    margin: 0 auto 8px auto;
+    display: block;
+  }
+}
 /* Responsive Design Improvements */
 @media (max-width: 1200px) {
   .container {
@@ -122,13 +281,13 @@ form {
   gap: 18px;
 }
 /* Animated page transitions */
-.fade-in {
+/* .fade-in {
   animation: fadeIn 0.8s cubic-bezier(0.4,0,0.2,1);
 }
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
-}
+} */
 
 /* Animated card pop */
 .card-pop {
@@ -285,7 +444,8 @@ form {
 body, html, #root {
   font-family: var(--font);
   color: var(--text);
-  background: var(--bg);
+  background: linear-gradient(135deg, #6a82fb 0%, #fc5c7d 100%);
+  min-height: 100vh;
 }
 
 *{box-sizing:border-box}
